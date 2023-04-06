@@ -5,4 +5,15 @@ block content
   p Welcome to #{title}
   p Manoj Thella
 
-  button(type="button", class="btn btn-primary") Press Me
+  button(type="button", class="btn btn-primary", onclick="doReduce()") Press Me
+  
+  div(id="reduce") Reduce the value
+
+  script.
+    var count= 20
+    var change= -1
+    function doReduce(){
+    count+=change
+    change-=1
+    document.getElementById("reduce").innerHTML="Count "+count+" with change "+change
+    }
