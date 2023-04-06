@@ -2,4 +2,11 @@ extends layout
 
 block content
   h1= title
- 
+  - var Results=[{type:"Multi-Rotor",cost:45,use:"Visual inspections"},{type:"Fixed-Wing",cost:105,use:"Aerial Mapping"},{type:"Single-Rotor",cost:225,use:"Carrying heavy payloads"}];
+    div(class="container-fluid")
+      div(class="row")
+        each drone in Results
+          div(class="col-sm-2")
+            p Type: #{drone.type}
+            p Cost: $#{drone.cost}
+            p Use: #{drone.use}
